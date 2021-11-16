@@ -1,0 +1,268 @@
+{% comment %}
+HTML5/MP4 Autoplay video slider for Shopify.
+Works in iphone too.
+Develop By: Hanzz Rock
+Contact me for the Shopify work: www.instagram.com/hanzzrock
+{% endcomment %}
+<div class="containerX">
+<video  width="100%" video="100%" style="width:100%, height:100%" playsinline="playsinline" muted="muted" preload="yes" autoplay="autoplay" loop="loop" id="vjs_video_739_html5_api" class="video-js" data-setup='{"autoplay":"any"}'>
+    		<source src="{{ section.settings.video_url }}" type="video/mp4">
+      </video>
+   <div class="overlay">
+        <h4>{{ section.settings.video-text1 }}</h4>
+        <h4>{{ section.settings.video-text2 }}</h4>
+        <h4>{{ section.settings.video-text3 }}</h4>
+    </div>
+</div>
+
+<div class="pro-hero__bottom">
+    <a class="pro-hero__section-link" href="https://www.gkhair.com/account/login">
+      <div class="pro-hero__bottom-left">
+        <p>Already have an account? <span>Sign In</span></p>
+      </div>
+    </a>
+
+    <a class="pro-hero__section-link" href="#action">
+      <div class="pro-hero__bottom-right">
+        <p>Want to Join? <span>Sign Up</span></p>
+      </div>
+    </a>
+  </div>
+{% schema %}
+  {
+    "name": "Video BG Slider",
+    "settings": [
+{
+        "type": "text",
+        "id": "video_url",
+        "label": "Background video link",
+        "default": "https://cdn.shopify.com/s/files/1/0278/4421/4886/files/GK_Hair_Professional_Page_VP8.webm?v=1636664968",
+        "info": "GK HAIR OFFICIAL VIDEO"
+      },
+{
+      "id": "video-text1",
+      "type": "text",
+      "label": "Overlay Text 1",
+      "default": "BALANCE"
+    },
+    {
+      "id": "video-text2",
+      "type": "text",
+      "label": "Overlay Text 2",
+      "default": "~RELEASE"
+    },
+    {
+      "id": "video-text3",
+      "type": "text",
+      "label": "Overlay Text 3",
+      "default": "RESTORE"
+    }
+]
+ ,
+    "presets": [{
+      "name": "Video BG Slider",
+      "category": "Video"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+ 
+
+{% endstylesheet %}
+
+{% javascript %}
+  
+ 
+                               
+{% endjavascript %}
+
+<style>
+  @media (min-width: 481px) and (max-width: 768px) {
+  
+  .overlay h4 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    top: 18rem;
+    color: white !important;
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+    left: 20px;
+    background: #100f0f38;
+    text-transform: uppercase;
+}
+    .overlay h4::after {
+    content: '';
+    position: absolute;
+    left: 2px;
+    background: #ffa301;
+    width: 30%;
+    height: 2px;
+    top: 67px;
+    bottom: 0;
+}
+  
+  }
+  @media (min-width: 769px) and (max-width: 2560px) {
+   .overlay h4 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    top: 25rem;
+    color: white !important;
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+    left: 20px;
+    background: #100f0f38;
+    text-transform: uppercase;
+}
+  
+.overlay h4::after {
+    content: '';
+    position: absolute;
+    left: 2px;
+    background: #ffa301;
+    width: 30%;
+    height: 2px;
+    top: 67px;
+    bottom: 0;
+}  
+  
+  }
+  .containerX { position:relative; }
+.containerX video {
+    position:relative;
+    z-index:0;
+}
+.overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+}
+  .pro-hero__bottom-left p {
+    color: white !important;
+}
+  a.pro-hero__section-link {
+    text-decoration: none !important;
+}
+  .pro-hero__bottom {
+    margin-bottom: 20px;
+}
+  .pro-hero__bottom-right p {
+    color: white !important;
+    text-transform: uppercase !important;
+    font-family: 'Oswald' !important;
+}
+  @media (min-width: 320px) and (max-width: 480px) { 
+  
+  .pro-hero__bottom-right p {
+    font-size: 18px !important;
+}
+ .pro-hero__bottom-left p {
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    font-size: 18px !important;
+ 
+  }
+    .overlay h4::after {
+    content: '';
+    position: absolute;
+    left: 2px;
+    background: #ffa301;
+    width: 30%;
+    height: 2px;
+    top: 38px;
+    bottom: 0;
+}
+    .pro-hero__bottom-right {
+    
+     margin-top: 0px !important;
+    
+    }
+    
+    .overlay h4 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    top: 9rem;
+    color: white !important;
+    font-size: 29px;
+    margin: 0;
+    padding: 0;
+    left: 6px;
+    background: #100f0f38;
+    text-transform: uppercase;
+}
+    .pro-hero__bottom-right {
+    background: #ffa301;
+    flex-basis: 50%;
+    text-align: center;
+    color: #000;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    
+}
+    .pro-hero__bottom-left {
+    background: #2d006a;
+    background-size: cover;
+    background-position: center;
+    flex-basis: 50%;
+    text-align: center;
+    color: #fff;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    
+    }}
+  @media all{
+a{background-color:transparent;-webkit-text-decoration-skip:objects;}
+*,::after,::before{box-sizing:border-box;}
+a:focus{color:inherit;}
+a{touch-action:manipulation;}
+@media print{
+p{orphans:3;widows:3;}
+}
+*,:after,:before{box-sizing:border-box;}
+a,div,p,span{margin:0;padding:0;}
+:focus,a:active,a:focus,a:hover{outline:0 none transparent;}
+a{color:#000;outline:0;text-decoration:none;transition:background-color .3s,color .3s;}
+.no-ios a:hover{color:#969696;}
+.pro-hero__bottom{display:flex;flex-direction:column;}
+@media (min-width:1024px){
+.pro-hero__bottom{flex-direction:row;}
+}
+.pro-hero__bottom-left{background: #2d006a;;background-size:cover;background-position:center;flex-basis:50%;text-align:center;color:#fff;height:65px;display:flex;justify-content:center;align-items:center;padding:0 20px;margin-top: -7px;}
+.pro-hero__bottom-left p{font-family: 'Oswald';
+    text-transform: uppercase;font-size:25px;}
+@media (min-width:1024px){
+.pro-hero__bottom-left p{font-size:30px;}
+}
+.pro-hero__bottom-left span{text-decoration:underline;color:#fff;}
+.pro-hero__bottom-right{background:#ffa301;flex-basis:50%;text-align:center;color:#000;height:65px;display:flex;justify-content:center;align-items:center;padding:0 20px; margin-top: -7px;}
+.pro-hero__bottom-right p{font-family:"Founders Grotesk Medium",Helvetica,Arial,sans-serif;font-size:25px;}
+@media (min-width:1024px){
+.pro-hero__bottom-right p{font-size:30px;}
+}
+.pro-hero__bottom-right span{text-decoration:underline;}
+.pro-hero__section-link{width:100%;}
+@media (min-width:1024px){
+.pro-hero__section-link{width:50%;}
+}
+}
+/*! CSS Used fontfaces */
+@font-face{font-family:"Founders Grotesk Medium";font-style:normal;font-weight:400;src:url("//cdn.shopify.com/s/files/1/0023/1148/7532/t/114/assets/webfont-founders-grotesk-medium.eot?v=233111769955023480");src:url("//cdn.shopify.com/s/files/1/0023/1148/7532/t/114/assets/webfont-founders-grotesk-medium.eot?v=233111769955023480?#iefix") format("embedded-opentype"),url("//cdn.shopify.com/s/files/1/0023/1148/7532/t/114/assets/webfont-founders-grotesk-medium.woff2?v=1354706902340822809") format("woff2"),url("//cdn.shopify.com/s/files/1/0023/1148/7532/t/114/assets/webfont-founders-grotesk-medium.woff?v=6889905056665436888") format("woff"),url("//cdn.shopify.com/s/files/1/0023/1148/7532/t/114/assets/webfont-founders-grotesk-medium.ttf?v=3056838752753348016") format("truetype"),url("//cdn.shopify.com/s/files/1/0023/1148/7532/t/114/assets/webfont-founders-grotesk-medium.svg?v=6214249017907289686?#webfont-founders-grotesk-medium") format("svg");}
+@font-face{font-family:'Founders Grotesk Medium';src:url(https://cdn.shopify.com/s/files/1/0023/1148/7532/t/23/assets/webfont-founders-grotesk-medium.woff2);font-weight:500;font-style:normal;font-display:swap;}
+</style>
+
